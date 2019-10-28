@@ -11,8 +11,9 @@ public interface UsersMapper {
     @Select("select * from users")
     List<Users> findAll();
 
-    @Insert("insert into users(Employee_Age, Employee_Name, Employee_Salary) values(#{Employee_Age},#{Employee_Name},#{Employee_Salary})")
-    @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "seq_no",
+   // @Insert("insert into users(Employee_Age, Employee_Name, Employee_Salary) values(#{Employee_Age},#{Employee_Name},#{Employee_Salary})")
+    @Insert("insert into users(Employee_Age, Employee_Name, Employee_Salary) values('55','asd',90)")
+    @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "Seq_No",
             before = false, resultType = Integer.class)
     void insert(Users users);
 

@@ -63,4 +63,17 @@ public class UsersResource {
 
     }
     
+    @GetMapping("/Insert")
+    private List<Users> Insert() {
+
+        Users users = new Users();
+        users.setEmployee_Name("ZZ");
+        users.setEmployee_Age("666");
+        users.setEmployee_Salary(666);
+
+        usersMapper.insert(users);
+        return usersMapper.findAll();
+
+    }
+    
 }
